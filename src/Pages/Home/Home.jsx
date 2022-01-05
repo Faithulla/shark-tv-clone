@@ -1,43 +1,87 @@
-import { Card, Col, Row } from "antd";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import SimpleChart from "../../components/chart/simplechrt";
+import "./style.css";
+
+import { Card, Col, Row } from "antd";
 import {
   YoutubeOutlined,
   HeatMapOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import "./style.css";
+
 const Home = () => {
+  const [count1, setCount1] = useState([]);
+  const [count2, setCount2] = useState([]);
+  const [count3, setCount3] = useState([]);
+  const getUsersCount = () => {
+    axios
+      .get("http://localhost:5000/users")
+      .then((res) => {
+        console.log(res.data);
+        setCount1(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const getSubsCount = () => {
+    axios
+      .get("http://localhost:5000/subs")
+      .then((res) => {
+        console.log(res.data);
+        setCount2(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const getMovieCount = () => {
+    axios
+      .get("http://localhost:5000/movies")
+      .then((res) => {
+        console.log(res.data);
+        setCount3(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getUsersCount();
+    getSubsCount();
+    getMovieCount();
+  }, []);
   return (
     <div>
       <div className="cards">
         <Row gutter={16}>
           <Col span={8}>
             <Card
-              title={<UserOutlined style={{ fontSize: "20px" }}/>}
+              prefix={<UserOutlined />}
+              title={<UserOutlined style={{ fontSize: "20px" }} />}
               bordered={false}
               style={{ borderRadius: "5px", fontWeight: "bold" }}
             >
-              Users : {"14"}
+              Users : {count1.length}
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card
+              title={<HeatMapOutlined style={{ fontSize: "20px" }} />}
+              bordered={false}
+              style={{ borderRadius: "5px", fontWeight: "bold" }}
+            >
+              Subscriptions : {count2.length}
             </Card>
           </Col>
           <Col span={8}>
             <Card
               title={<YoutubeOutlined style={{ fontSize: "20px" }} />}
               bordered={false}
-              style={{ borderRadius: "5px" , fontWeight: "bold"  }}
+              style={{ borderRadius: "5px", fontWeight: "bold" }}
             >
-              Movies : {'20'}
-            </Card>
-          </Col>
-
-          <Col span={8}>
-            <Card
-              title={ <HeatMapOutlined style={{ fontSize: "20px" }} />}
-              bordered={false}
-              style={{ borderRadius: "5px" , fontWeight: "bold"}}
-            >
-             Subscriptions : {'10'}
+              Movies : {count3.length}
             </Card>
           </Col>
         </Row>

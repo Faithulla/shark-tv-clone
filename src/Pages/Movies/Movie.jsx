@@ -1,11 +1,15 @@
-import { Table } from "antd";
-import axios from "axios";
 import React, { useState, useEffect } from "react";
-
-import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+import {  Table, } from "antd";
+import {
+  EditOutlined,
+  DeleteOutlined,
+} from "@ant-design/icons";
 
 const Movie = () => {
+  const [movies, setMovies] = useState([]);
   const history = useNavigate();
   const addMovie = () => {
     axios
@@ -20,7 +24,6 @@ const Movie = () => {
         console.log(error);
       });
   };
-  const [movies, setMovies] = useState([]);
   useEffect(() => {
     axios
       .get("http://localhost:5000/movies")
@@ -66,6 +69,7 @@ const Movie = () => {
   ];
   return (
     <div>
+      
       <Table bordered columns={columns} dataSource={movies}></Table>
       <button onClick={addMovie}>addMovie</button>
     </div>

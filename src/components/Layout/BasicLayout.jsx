@@ -9,7 +9,7 @@ import {
   HeatMapOutlined,
 } from "@ant-design/icons";
 import { routes } from "../../Routes/routes";
-const { Header, Content, Sider } = Layout;
+const {  Content, Sider } = Layout;
 const Basiclayout = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -39,7 +39,7 @@ const Basiclayout = () => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-          
+
         <Content style={{ margin: "0 16px" }}>
           <Routes>
             {routes.map((route) => (

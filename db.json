@@ -21,6 +21,11 @@
       "id": 1,
       "name": "Spiderman",
       "genre": "Action"
+    },
+    {
+      "name": "Matrix",
+      "genre": "Fiction",
+      "id": 2
     }
   ],
   "subs": [
@@ -28,16 +33,6 @@
       "id": 1,
       "type": "Monthly",
       "duration": "30 days"
-    },
-    {
-      "type": "Yearly",
-      "duration": "5 years",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "type": "Yearly",
-      "duration": "5 years"
     }
   ]
 }

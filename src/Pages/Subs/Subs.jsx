@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import { Button, Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
@@ -12,7 +13,7 @@ const Subs = (props) => {
     axios
     .get(`http://localhost:5000/subs/${id}`)
     .then(res => {
-      console.log("Getted data",res.data);
+      console.log("recived data",res.data);
       setSubs(res.data)
     })
     .catch(err => {
