@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Roboto+Condensed&display=swap');
+
+.load-container{
+   
+    height: 100%;
+    border-bottom-left-radius: 5px;
+}
+.logo{
+    width: 500px;
+    background-color: blue;
+    margin: auto;
+    font-size: 50px;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 100px;
+    
+}
+.logo h1 {
+    padding-left: 40px;
+    color: white;
+    margin-top: 30vh;
+}
+.loader{
+    margin-left: 50%;
+}
+
+

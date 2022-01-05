@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Basiclayout from './components/Layout/BasicLayout';
+import Loadscreen from './Pages/LoadScreen';
 
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      currentUser:null
-     }
-  }
-  render() { 
-    return ( 
-      <div>
-        <Basiclayout/>
-      </div>
-     );
-  }
+const App = () => {
+  const [load, setLoad] = useState(false);
+  useEffect(() => {
+    setLoad(true);
+    setTimeout(() => {
+      setLoad(false);
+    }, 2000);
+  }, []);
+  return (
+    <div>
+    {
+      load ? 
+      <Loadscreen/>
+      :
+      <Basiclayout/>
+    }
+    </div>
+  );
 }
- 
+
 export default App;

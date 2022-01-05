@@ -7,11 +7,11 @@ import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const Subs = (props) => {
   const [subs, setSubs] = useState([]);
-  const [id, setId] = useState([]);
+  // const [id, setId] = useState([]);
   const history = useNavigate();
   useEffect(() => {
     axios
-    .get(`http://localhost:5000/subs/${id}`)
+    .get(`http://localhost:5000/subs`)
     .then(res => {
       console.log("recived data",res.data);
       setSubs(res.data)
@@ -19,7 +19,7 @@ const Subs = (props) => {
     .catch(err => {
       console.log("err",err);
     })
-  }, [id]);
+  }, []);
   const columns = [
     {
       title: "No",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, Menu } from "antd";
+import { Input, Layout, Menu } from "antd";
 import { Link, Route, Routes } from "react-router-dom";
 import "./style.css";
 import {
@@ -7,9 +7,10 @@ import {
   UserOutlined,
   YoutubeOutlined,
   HeatMapOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 import { routes } from "../../Routes/routes";
-const {  Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 const Basiclayout = () => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
@@ -39,11 +40,13 @@ const Basiclayout = () => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-
-        <Content style={{ margin: "0 16px" }}>
+      <Header className="site-layout-background" style={{padding:'0px'}}>
+        <Input prefix={<SearchOutlined/>} placeholder='Search' style={{width: '20%',marginLeft: '15px',borderRadius:'5px'}}/>
+      </Header>
+        <Content style={{ margin: "0 16px" ,marginTop: '10px'}}>
           <Routes>
             {routes.map((route) => (
-              <Route path={route.path} element={route.element} ></Route>
+              <Route path={route.path} element={route.element} key={route.key} ></Route>
             ))}
           </Routes>
         </Content>
