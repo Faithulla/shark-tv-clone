@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Table } from "antd";
+import { Button, Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 
 const Subs = (props) => {
   const [subs, setSubs] = useState([]);
+  const [id, setId] = useState([]);
   const history = useNavigate();
   useEffect(() => {
     axios
-    .get("http://localhost:5000/subs")
+    .get(`http://localhost:5000/subs/${id}`)
     .then(res => {
       console.log("Getted data",res.data);
       setSubs(res.data)
@@ -17,7 +18,7 @@ const Subs = (props) => {
     .catch(err => {
       console.log("err",err);
     })
-  }, []);
+  }, [id]);
   const columns = [
     {
       title: "No",
@@ -51,7 +52,7 @@ const Subs = (props) => {
   return (
     <div>
       <Table bordered columns={columns} dataSource={subs}></Table>
-      <button >add</button>
+      <Button >ADD SUBS</Button>
     </div>
   );
 };

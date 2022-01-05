@@ -35,9 +35,9 @@
       "id": 2
     },
     {
+      "id": 3,
       "type": "Yearly",
-      "duration": "5 years",
-      "id": 3
+      "duration": "5 years"
     }
   ]
 }

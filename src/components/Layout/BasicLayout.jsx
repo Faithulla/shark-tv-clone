@@ -15,23 +15,23 @@ const Basiclayout = () => {
     <Layout style={{ minHeight: "100vh" }}>
       <Sider collapsible theme="light">
         <div className="logo" />
-        <Menu theme="light" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item>
+        <Menu theme="light" defaultSelectedKeys={["0"]} mode="inline">
+          <Menu.Item key={1}>
             <PieChartOutlined />
             <span>Home</span>
             <Link to="/dashboard"></Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key={2}>
             <UserOutlined />
             <span>Users</span>
             <Link to="/users/list"></Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key={3}>
             <YoutubeOutlined />
             <span>Movies</span>
             <Link to="/movie/list"></Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key={4}>
             <HeatMapOutlined />
             <span>Subscripton</span>
             <Link to="/subs/list"></Link>
@@ -39,14 +39,11 @@ const Basiclayout = () => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-        <Header
-          className="site-layout-background"
-          style={{ padding: 0, backgroundColor: "white", marginBottom: "2vh" }}
-        />
+          
         <Content style={{ margin: "0 16px" }}>
           <Routes>
             {routes.map((route) => (
-              <Route path={route.path} element={route.element}></Route>
+              <Route path={route.path} element={route.element} ></Route>
             ))}
           </Routes>
         </Content>
