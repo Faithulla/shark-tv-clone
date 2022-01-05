@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Munis",
+      "number": "+998972998730"
+    },
+    {
+      "id": 2,
+      "name": "Fayzulla",
+      "number": "+998991893191"
+    },
+    {
+      "id": 3,
+      "name": "Aziz",
+      "number": "+998941113755"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": "Spiderman",
+      "genre": "Action"
+    }
+  ],
+  "subs": [
+    {
+      "id": 1,
+      "type": "Monthly",
+      "duration": "30 days"
+    },
+    {
+      "type": "Yearly",
+      "duration": "5 years",
+      "id": 2
+    },
+    {
+      "type": "Yearly",
+      "duration": "5 years",
+      "id": 3
+    }
+  ]
+}
