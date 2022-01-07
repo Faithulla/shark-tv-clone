@@ -1,41 +1,16 @@
 {
   "users": [
     {
-      "id": 1,
       "name": "Munis",
-      "number": "+998972998730"
+      "number": "+998992998730",
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Fayzulla",
-      "number": "+998991893191"
-    },
-    {
-      "id": 3,
-      "name": "Aziz",
-      "number": "+998941113755"
-    },
-    {
-      "id": 4
-    }
-  ],
-  "movies": [
-    {
-      "id": 1,
-      "name": "Spiderman",
-      "genre": "Action"
-    },
-    {
-      "name": "Matrix",
-      "genre": "Fiction",
+      "number": "+99899966478",
       "id": 2
     }
   ],
-  "subs": [
-    {
-      "id": 1,
-      "type": "Monthly",
-      "duration": "30 days"
-    }
-  ]
+  "movies": [],
+  "subs": []
 }

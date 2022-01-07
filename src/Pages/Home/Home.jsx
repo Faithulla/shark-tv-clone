@@ -18,7 +18,6 @@ const Home = () => {
     axios
       .get("http://localhost:5000/users")
       .then((res) => {
-        console.log(res.data);
         setCount1(res.data);
       })
       .catch((err) => {
@@ -29,7 +28,6 @@ const Home = () => {
     axios
       .get("http://localhost:5000/subs")
       .then((res) => {
-        console.log(res.data);
         setCount2(res.data);
       })
       .catch((err) => {

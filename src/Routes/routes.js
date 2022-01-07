@@ -1,11 +1,11 @@
 import Err from "../Pages/err";
 import Home from "../Pages/Home/Home";
 import Movie from "../Pages/Movies/Movie";
-import Subitem from "../Pages/Subs/SubItem";
+import SubItem from "../Pages/Subs/SubItem";
 import Subs from "../Pages/Subs/Subs";
 import Users from "../Pages/Users/Users";
 import UserEdit from "../Pages/Users/UserEdit";
-import Movieedit from "../Pages/Movies/MovieEdit";
+import MovieEdit from "../Pages/Movies/MovieEdit";
 
 export const routes = [
   {
@@ -19,18 +19,18 @@ export const routes = [
     key: 2,
   },
   {
-    path: "/subs/list/id",
-    element: <Subitem />,
+    path: "/subs/list/:id",
+    element: <SubItem />,
     key: 3,
   },
   {
-    path: "/users/list/id",
+    path: "/users/list/:id",
     element: <UserEdit />,
     key: 4,
   },
   {
-    path: "/movie/list/id",
-    element: <Movieedit />,
+    path: "/movie/list/:id",
+    element: <MovieEdit />,
     key: 5,
   },
   {
