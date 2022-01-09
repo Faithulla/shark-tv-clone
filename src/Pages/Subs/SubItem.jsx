@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Input } from "antd";
 import { useParams } from "react-router-dom";
 
-
 const SubItem = () => {
   const [subs, setSubs] = useState([]);
   const [type, setType] = useState("");
@@ -18,7 +17,10 @@ const SubItem = () => {
   };
   const update = (e) => {
     axios
-      .put(`http://localhost:5000/subs/${id}`, { type: type, duration: duration })
+      .put(`http://localhost:5000/subs/${id}`, {
+        type: type,
+        duration: duration,
+      })
       .then((res) => {
         console.log("res data", res.data);
       })

@@ -20,7 +20,7 @@ const Basiclayout = () => {
           <Menu.Item key={1}>
             <PieChartOutlined />
             <span>Home</span>
-            <Link to="/dashboard"></Link>
+            <Link to="/"></Link>
           </Menu.Item>
           <Menu.Item key={2}>
             <UserOutlined />

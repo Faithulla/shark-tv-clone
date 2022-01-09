@@ -9,7 +9,7 @@ import MovieEdit from "../Pages/Movies/MovieEdit";
 
 export const routes = [
   {
-    path: "/dashboard",
+    path: "/",
     element: <Home />,
     key: 1,
   },

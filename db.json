@@ -1,16 +1,46 @@
 {
   "users": [
     {
-      "name": "Munis",
-      "number": "+998992998730",
-      "id": 1
+      "name": "Fayzulla138sadwadasdw",
+      "number": "",
+      "id": 1,
+      "movies": [
+        {
+          "id": 1,
+          "name": "The Guardian",
+          "genre": "Action"
+          
+        }
+      ]
     },
     {
-      "name": "Fayzulla",
-      "number": "+99899966478",
-      "id": 2
+      "name": "Munis Azadov",
+      "number": "+998992998730",
+      "id": 2,
+      "movies": [
+        {
+          "id": 1,
+          "name": "The Guardian",
+          "genre": "Action"
+          
+        }
+      ]
+    }
+
+  ],
+  "movies": [
+    {
+      "name": "Matrix",
+      "genre": "Action, Adventure",
+      "id": 1
     }
   ],
-  "movies": [],
-  "subs": []
+  "subs": [
+    {
+      "type": "Day",
+      "duration": "28 ",
+      "id": 1
+    }
+  ]
+ 
 }
