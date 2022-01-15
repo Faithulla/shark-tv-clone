@@ -1,32 +1,10 @@
 {
   "users": [
     {
-      "name": "Fayzulla138sadwadasdw",
+      "name": "",
       "number": "",
-      "id": 1,
-      "movies": [
-        {
-          "id": 1,
-          "name": "The Guardian",
-          "genre": "Action"
-          
-        }
-      ]
-    },
-    {
-      "name": "Munis Azadov",
-      "number": "+998992998730",
-      "id": 2,
-      "movies": [
-        {
-          "id": 1,
-          "name": "The Guardian",
-          "genre": "Action"
-          
-        }
-      ]
+      "id": 1
     }
-
   ],
   "movies": [
     {
@@ -41,6 +19,33 @@
       "duration": "28 ",
       "id": 1
     }
+  ],
+  "teachers": [
+    {
+      "name": "Minus",
+      "subject": "Designer",
+      "phone_number": "+998971234567",
+      "id": 1
+    },
+    {
+      "name": "Munis",
+      "subject": "Frontend",
+      "phone_number": "+998977654321",
+      "id": 2
+    }
+  ],
+  "students": [
+    {
+      "name": "Fayzulla",
+      "phoneNumber": "+998977654321",
+      "teacher_id": 2,
+      "id": 1
+    },
+    {
+      "name": "Aziz",
+      "phoneNumber": "+998977654467",
+      "teacher_id": 1,
+      "id": 2
+    }
   ]
- 
 }

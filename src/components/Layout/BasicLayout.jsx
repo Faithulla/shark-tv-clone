@@ -40,13 +40,21 @@ const Basiclayout = () => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-      <Header className="site-layout-background" style={{padding:'0px'}}>
-        <Input prefix={<SearchOutlined/>} placeholder='Search' style={{width: '20%',marginLeft: '15px',borderRadius:'5px'}}/>
-      </Header>
-        <Content style={{ margin: "0 16px" ,marginTop: '10px'}}>
+        <Header className="site-layout-background" style={{ padding: "0px" }}>
+          <Input
+            prefix={<SearchOutlined />}
+            placeholder="Search"
+            style={{ width: "20%", marginLeft: "15px", borderRadius: "5px" }}
+          />
+        </Header>
+        <Content style={{ margin: "0 16px", marginTop: "10px" }}>
           <Routes>
             {routes.map((route) => (
-              <Route path={route.path} element={route.element} key={route.key} ></Route>
+              <Route
+                path={route.path}
+                element={route.element}
+                key={route.key}
+              ></Route>
             ))}
           </Routes>
         </Content>

@@ -9,8 +9,10 @@ import {
   HeatMapOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import Piechart from "../../components/chart/pieChart";
 
 const Home = () => {
+  
   const [count1, setCount1] = useState([]);
   const [count2, setCount2] = useState([]);
   const [count3, setCount3] = useState([]);
@@ -50,6 +52,7 @@ const Home = () => {
     getSubsCount();
     getMovieCount();
   }, []);
+
   return (
     <div>
       <div className="cards">
@@ -82,7 +85,9 @@ const Home = () => {
               Movies : {count3.length}
             </Card>
           </Col>
+        <Piechart/>
         </Row>
+        
       </div>
       <div className="chart">
         <SimpleChart />

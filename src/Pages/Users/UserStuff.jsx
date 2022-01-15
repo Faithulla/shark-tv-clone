@@ -46,10 +46,7 @@ const Usermovies = () => {
         return (
           <>
             <EditOutlined />
-            <Popconfirm
-              title="Sure?"
-              
-            >
+            <Popconfirm title="Sure?">
               <DeleteOutlined
                 style={{ marginLeft: "14px", color: "red", fontSize: "15px" }}
               />
@@ -64,7 +61,7 @@ const Usermovies = () => {
       <Table
         bordered
         dataSource={userMovies.map((item) => {
-            return { ...item, key: item.id };
+          return { ...item, key: item.id };
         })}
         columns={columns}
         pagination={{ pageSize: 5 }}

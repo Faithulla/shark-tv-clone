@@ -4,7 +4,7 @@ import { Button, Card, Input, Tabs } from "antd";
 import { Link, useParams } from "react-router-dom";
 
 import "./input.css";
-import Usermovies from "./UserMovies";
+import Usermovies from "./UserStuff";
 
 const Useredit = () => {
   const TabPane = Tabs.TabPane;
@@ -19,6 +19,9 @@ const Useredit = () => {
       setData(res.data);
     });
   };
+  const handleChange = (e) => {
+     
+  }
   const handleUpdate = (e) => {
     axios
       .put(`http://localhost:5000/users/${id}`, { name: name, number: number })

@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+
 import {
   LineChart,
   Line,
@@ -9,6 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+
 const data = [
   {
     name: "Page A",
@@ -57,9 +59,13 @@ const data = [
 export default class SimpleChart extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height={400} >
+      <ResponsiveContainer width="100%" height={400}>
         <LineChart
-        style={{backgroundColor:"#fff",paddingTop:"20px",borderRadius:"5px"}}
+          style={{
+            backgroundColor: "#fff",
+            paddingTop: "20px",
+            borderRadius: "5px",
+          }}
           width={400}
           height={700}
           data={data}
@@ -83,6 +89,7 @@ export default class SimpleChart extends PureComponent {
           />
           <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
         </LineChart>
+        
       </ResponsiveContainer>
     );
   }

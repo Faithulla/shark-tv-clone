@@ -4,7 +4,7 @@ import Movie from "../Pages/Movies/Movie";
 import SubItem from "../Pages/Subs/SubItem";
 import Subs from "../Pages/Subs/Subs";
 import Users from "../Pages/Users/Users";
-import UserEdit from "../Pages/Users/UserEdit";
+import UserEdit from "../Pages/Users/UserCard";
 import MovieEdit from "../Pages/Movies/MovieEdit";
 
 export const routes = [
@@ -18,6 +18,7 @@ export const routes = [
     element: <Subs />,
     key: 2,
   },
+
   {
     path: "/subs/list/:id",
     element: <SubItem />,

@@ -13,7 +13,7 @@ const Users = () => {
 
   const history = useNavigate();
   const location = window.location.pathname;
-  
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -51,7 +51,7 @@ const Users = () => {
         console.log("error");
       });
   };
-  
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async (e) => {
     axios
@@ -114,15 +114,11 @@ const Users = () => {
   ];
   return (
     <div>
-    <Breadcrumb >
-      {location.split("/").map((item, index) => {
-        return (
-          <Breadcrumb.Item key={index}>
-            {item}
-          </Breadcrumb.Item>
-        );
-      })}
-    </Breadcrumb>
+      <Breadcrumb>
+        {location.split("/").map((item, index) => {
+          return <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>;
+        })}
+      </Breadcrumb>
       <Table
         bordered
         columns={columns}
