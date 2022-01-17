@@ -93,7 +93,14 @@ const Subs = (props) => {
       render: (_, record) => {
         return (
           <>
-            <EditOutlined onClick={(e) => history(`/subs/list/${record.id}`)} />
+            <EditOutlined onClick={(e) => history(`/subs/list/${record.id}`)} 
+               style={{
+                fontSize: "15px",
+                border: "1px solid #d9d9d9",
+                padding: "5px",
+                
+              }}
+            />
             <Popconfirm
               title="Sure?"
               onConfirm={() => {
@@ -101,7 +108,13 @@ const Subs = (props) => {
               }}
             >
               <DeleteOutlined
-                style={{ marginLeft: "14px", color: "red", fontSize: "15px" }}
+                style={{
+                  marginLeft: "10px",
+                  color: "red",
+                  fontSize: "15px",
+                  border: "1px solid #d9d9d9",
+                  padding: "5px",
+                }}
               />
             </Popconfirm>
           </>

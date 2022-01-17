@@ -4,39 +4,41 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 const Usermovies = () => {
-  const [userMovies, setUserMovies] = useState([]);
+  
+  const [userStuff, setUserStuff] = useState([]);
   const { id } = useParams();
-  const getUserMovies = () => {
+  const getUserStuff = () => {
     axios
-      .get(`http://localhost:5000/users/${id}/movies`)
+      .get(`http://localhost:5000/subs/?id=${id}`)
       .then((res) => {
         console.log("got it", res.data);
-        setUserMovies(res.data);
+        setUserStuff(res.data);
       })
       .catch((err) => {
         console.log("404", err);
       });
   };
   useEffect(() => {
-    getUserMovies();
+    getUserStuff();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   const columns = [
     {
       key: 0,
       title: "No",
-      dataIndex: "id",
+      dataIndex: `id`,
       width: "60px",
     },
     {
       key: 1,
-      title: "Movies",
-      dataIndex: "name",
+      title: "Type",
+      dataIndex: "type",
     },
     {
       key: 2,
-      title: "Genre",
-      dataIndex: "genre",
+      title: "Duration",
+      dataIndex: "duration",
     },
     {
       key: 3,
@@ -60,7 +62,8 @@ const Usermovies = () => {
     <div>
       <Table
         bordered
-        dataSource={userMovies.map((item) => {
+        style={{ marginTop: "-25px" }}
+        dataSource={userStuff.map((item) => {
           return { ...item, key: item.id };
         })}
         columns={columns}

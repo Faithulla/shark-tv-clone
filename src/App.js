@@ -11,11 +11,12 @@ const App = () => {
   //     setLoad(false);
   //   }, 2000);
   // }, []);
-   return <div>
-   {/* {load ? <Loadscreen /> : 
+  return <div>
+  {/* {load ? <Loadscreen /> :
    } */}
-  <Basiclayout />
-  </div>;
+   <Basiclayout />
+   
+   </div>;
 };
 
 export default App;

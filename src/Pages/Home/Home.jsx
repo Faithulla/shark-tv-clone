@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SimpleChart from "../../components/chart/simplechrt";
 import "./style.css";
-
 import { Card, Col, Row } from "antd";
 import {
   YoutubeOutlined,
@@ -12,7 +11,6 @@ import {
 import Piechart from "../../components/chart/pieChart";
 
 const Home = () => {
-  
   const [count1, setCount1] = useState([]);
   const [count2, setCount2] = useState([]);
   const [count3, setCount3] = useState([]);
@@ -84,10 +82,9 @@ const Home = () => {
             >
               Movies : {count3.length}
             </Card>
+            <Piechart />
           </Col>
-        <Piechart/>
         </Row>
-        
       </div>
       <div className="chart">
         <SimpleChart />

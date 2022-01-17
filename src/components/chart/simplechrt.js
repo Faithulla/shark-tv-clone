@@ -59,15 +59,16 @@ const data = [
 export default class SimpleChart extends PureComponent {
   render() {
     return (
-      <ResponsiveContainer width="100%" height={400}>
+      <ResponsiveContainer width="60%" height={400}>
         <LineChart
           style={{
             backgroundColor: "#fff",
             paddingTop: "20px",
+            marginTop: '-51vh',
             borderRadius: "5px",
           }}
-          width={400}
-          height={700}
+          width={300}
+          height={200}
           data={data}
           margin={{
             top: 5,

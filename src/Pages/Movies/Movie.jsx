@@ -94,6 +94,11 @@ const Movie = () => {
           <>
             <EditOutlined
               onClick={(e) => history(`/movie/list/${record.id}`)}
+              style={{
+                fontSize: "15px",
+                border: "1px solid #d9d9d9",
+                padding: "5px",
+              }}
             />
             <Popconfirm
               title="Sure?"
@@ -102,7 +107,13 @@ const Movie = () => {
               }}
             >
               <DeleteOutlined
-                style={{ marginLeft: "14px", color: "red", fontSize: "15px" }}
+                style={{
+                  marginLeft: "10px",
+                  color: "red",
+                  fontSize: "15px",
+                  border: "1px solid #d9d9d9",
+                  padding: "5px",
+                }}
               />
             </Popconfirm>
           </>
@@ -113,15 +124,11 @@ const Movie = () => {
 
   return (
     <div>
-    <Breadcrumb >
-      {location.split("/").map((item, index) => {
-        return (
-          <Breadcrumb.Item key={index}>
-            {item}
-          </Breadcrumb.Item>
-        );
-      })}
-    </Breadcrumb>
+      <Breadcrumb>
+        {location.split("/").map((item, index) => {
+          return <Breadcrumb.Item key={index}>{item}</Breadcrumb.Item>;
+        })}
+      </Breadcrumb>
       <Table
         bordered
         columns={columns}

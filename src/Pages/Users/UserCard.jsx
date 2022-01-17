@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Button, Card, Input, Tabs } from "antd";
+import { Button, Card, Input, Select, Tabs } from "antd";
 import { Link, useParams } from "react-router-dom";
 
-import "./input.css";
 import Usermovies from "./UserStuff";
 
 const Useredit = () => {
@@ -11,6 +10,7 @@ const Useredit = () => {
   const [data, setData] = useState([]);
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
+  const [sex, setSex] = useState("");
   const { id } = useParams();
 
   const getUser = () => {
@@ -19,12 +19,14 @@ const Useredit = () => {
       setData(res.data);
     });
   };
-  const handleChange = (e) => {
-     
-  }
+
   const handleUpdate = (e) => {
     axios
-      .put(`http://localhost:5000/users/${id}`, { name: name, number: number })
+      .put(`http://localhost:5000/users/${id}`, {
+        name: name,
+        number: number,
+        sex: sex,
+      })
       .then((res) => {
         console.log("res data", res.data);
       })
@@ -41,18 +43,18 @@ const Useredit = () => {
   return (
     <div>
       <Tabs defaultActiveKey="0" type="card">
-        <TabPane tab="Card Tab 1" key="1">
+        <TabPane tab="User" key="1">
           <Card
             title={`User ID : ${id} `}
             bordered={false}
-            style={{ width: 600, height: 300 }}
+            style={{ width: 600, height: 300, marginTop: "-25px" }}
           >
             {data.map((item) => {
               return (
                 <div className="container-card" key={item.id}>
                   <Input
                     bordered={false}
-                    className="input-name"
+                    style={{ marginBottom: "10px" }}
                     defaultValue={item.name}
                     onChange={(e) => setName(e.target.value)}
                     prefix={"Name :"}
@@ -60,12 +62,16 @@ const Useredit = () => {
                   />
                   <Input
                     bordered={false}
-                    className="input-number"
+                    style={{ marginBottom: "10px" }}
                     defaultValue={item.number}
                     onChange={(e) => setNumber(e.target.value)}
                     prefix={`Number :`}
                     required
                   />
+                  <Select defaultValue={item.sex} onChange={(e) => setSex(sex)}>
+                    <Select.Option value="Male">Male</Select.Option>
+                    <Select.Option value="Female">Female</Select.Option>
+                  </Select>
                 </div>
               );
             })}
@@ -75,11 +81,8 @@ const Useredit = () => {
             <Button onClick={handleUpdate}>Update</Button>
           </Card>
         </TabPane>
-        <TabPane tab="Card Tab 2" key="2">
+        <TabPane tab="Subscriptions" key="2">
           <Usermovies />
-        </TabPane>
-        <TabPane tab="Card Tab 3" key="3">
-          Content of card tab 3
         </TabPane>
       </Tabs>
     </div>
