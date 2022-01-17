@@ -64,7 +64,7 @@ export default class SimpleChart extends PureComponent {
           style={{
             backgroundColor: "#fff",
             paddingTop: "20px",
-            marginTop: '-51vh',
+            marginTop: '-25vh',
             borderRadius: "5px",
           }}
           width={300}

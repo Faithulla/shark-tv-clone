@@ -41,12 +41,11 @@ const Piechart = () => {
     getSubsCount();
     getMovieCount();
   }, []);
- const data = [
+  const data = [
     { name: "Users", value: count1.length },
     { name: "Subs", value: count2.length },
     { name: "Movies", value: count3.length },
-
- ]
+  ];
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
   const RADIAN = Math.PI / 180;
@@ -83,13 +82,16 @@ const Piechart = () => {
           marginTop: "2vh",
           marginLeft: "-10vh",
           borderRadius: "5px",
+          position: "relative",
+          width: "13vw",
+          height: "25vh",
         }}
       >
         <PieChart width={400} height={400}>
           <Pie
             data={data}
-            cx="30%"
-            cy="30%"
+            cx="25%"
+            cy="23%"
             labelLine={false}
             label={renderCustomizedLabel}
             outerRadius={80}
