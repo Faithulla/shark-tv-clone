@@ -65,7 +65,7 @@ const Piechart = () => {
       <text
         x={x}
         y={y}
-        fill="white"
+        fill="black"
         textAnchor={x > cx ? "start" : "end"}
         dominantBaseline="central"
       >
@@ -80,7 +80,6 @@ const Piechart = () => {
         style={{
           backgroundColor: "white",
           marginTop: "2vh",
-          marginLeft: "-10vh",
           borderRadius: "5px",
           position: "relative",
           width: "13vw",

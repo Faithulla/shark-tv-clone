@@ -38,6 +38,7 @@ const Users = () => {
       });
   };
   const handleAddUser = () => {
+    // /orders-with-average-price/{customer_id}
     axios
       .post("http://localhost:5000/users", {
         name,
@@ -100,7 +101,6 @@ const Users = () => {
                 fontSize: "15px",
                 border: "1px solid #d9d9d9",
                 padding: "5px",
-                
               }}
             />
             <Popconfirm
