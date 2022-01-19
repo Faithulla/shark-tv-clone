@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Input, Select, Tabs } from "antd";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Usermovies from "./UserStuff";
 
@@ -19,6 +19,7 @@ const Useredit = () => {
       setData(res.data);
     });
   };
+  const history = useNavigate();
 
   const handleUpdate = (e) => {
     axios
@@ -32,16 +33,26 @@ const Useredit = () => {
       })
       .catch((err) => {
         console.log("not updated", err);
-      });
+      })
+      .finally(history("/users/list"));
   };
 
-  const handleChangeName = (e) => {
+  // const handleChangeName = (e) => {
+  //   setName(e.target.value);
+  //   console.log("Name int", e.target.value);
+  // };
+  // const handleChangeNumber = (e) => {
+  //   setNumber(e.target.value);
+  //   console.log("number int", e.target.value);
+  // };
+  const handleChange = (e) => {
     setName(e.target.value);
-    console.log("Name int", e.target.value);
-  };
-  const handleChangeNumber = (e) => {
     setNumber(e.target.value);
-    console.log("number int", e.target.value);
+    console.log("Na", e.target.value);
+  };
+  const handleChangeSex = (e) => {
+    setSex(sex);
+    console.log("Sex", e.target.value);
   };
 
   useEffect(() => {
@@ -59,33 +70,37 @@ const Useredit = () => {
           >
             {data.map((item) => {
               return (
-                <div className="container-card" key={item.id}>
+                <div
+                  className="container-card"
+                  key={item.id}
+                  style={{ display: "flex", flexDirection: "column" }}
+                >
                   <Input
-                    bordered={false}
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px", width: "50%" }}
                     defaultValue={item.name}
-                    onChange={handleChangeName}
+                    onChange={handleChange}
                     prefix={"Name :"}
                     required
                   />
                   <Input
-                    bordered={false}
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px", width: "50%" }}
                     defaultValue={item.number}
-                    onChange={handleChangeNumber}
+                    onChange={handleChange}
                     prefix={`Number :`}
                     required
                   />
-                  <Select defaultValue={item.sex} onChange={(e) => setSex(sex)}>
+                  <Select
+                    defaultValue="Male"
+                    onSelect={handleChangeSex}
+                    style={{ width: "20%", marginBottom: "10px" }}
+                  >
                     <Select.Option value="Male">Male</Select.Option>
                     <Select.Option value="Female">Female</Select.Option>
                   </Select>
                 </div>
               );
             })}
-            <Button>
-              <Link to="users/list">Cancel</Link>
-            </Button>
+            <Button onClick={() => history("/users/list")}>Cancel</Button>
             <Button onClick={handleUpdate}>Update</Button>
           </Card>
         </TabPane>

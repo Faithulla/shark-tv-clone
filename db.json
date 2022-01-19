@@ -1,58 +1,23 @@
 {
   "users": [
     {
-      "name": "Fayzulla",
-      "number": "+99899966647823",
-      "sex": "",
+      "name": "Mf",
+      "number": "15864",
       "id": 1
-    },
-    {
-      "name": "Aziz",
-      "number": "+998941132780",
-      "id": 2
-    },
-    {
-      "name": "Muniss",
-      "number": "+9989996664781",
-      "sex": "",
-      "id": 3
-    },
-    {
-      "name": "SaidosAkbaros",
-      "number": "Unknown",
-      "id": 4
-    },
-    {
-      "name": "Palonkas",
-      "number": "123124123",
-      "id": 5
-    },
-    {
-      "name": "Palonkas",
-      "number": "123124123123",
-      "id": 6
     }
   ],
   "movies": [
     {
-      "name": "Home  Alone",
-      "genre": "Comedy",
+      "name": "awdasd",
+      "genre": "Drama",
+      "quality": "480p",
       "id": 1
     },
     {
-      "name": "Good",
-      "genre": "Adventures",
+      "name": "awdasd",
+      "genre": "Drama",
+      "quality": "1080,720,480",
       "id": 2
-    },
-    {
-      "name": "Grinch",
-      "genre": "Comedy",
-      "id": 3
-    },
-    {
-      "name": "DarkSide",
-      "genre": "Fantastic",
-      "id": 4
     }
   ],
   "subs": [
@@ -75,34 +40,6 @@
       "type": "Day",
       "duration": "29",
       "id": 4
-    }
-  ],
-  "teachers": [
-    {
-      "name": "Minus",
-      "subject": "Designer",
-      "phone_number": "+998971234567",
-      "id": 1
-    },
-    {
-      "name": "Munis",
-      "subject": "Frontend",
-      "phone_number": "+998977654321",
-      "id": 2
-    }
-  ],
-  "students": [
-    {
-      "name": "Fayzulla",
-      "phoneNumber": "+998977654321",
-      "teacher_id": 2,
-      "id": 1
-    },
-    {
-      "name": "Aziz",
-      "phoneNumber": "+998977654467",
-      "teacher_id": 1,
-      "id": 2
     }
   ]
 }

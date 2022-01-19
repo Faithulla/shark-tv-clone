@@ -2,17 +2,55 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-import { Breadcrumb, Button, Input, Popconfirm, Table } from "antd";
+import { Breadcrumb, Button, Input, Popconfirm, Select, Table } from "antd";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { YoutubeFilled, FileJpgOutlined } from "@ant-design/icons";
+import { YoutubeFilled } from "@ant-design/icons";
 import Modal from "antd/lib/modal/Modal";
 const Movie = () => {
+  const location = window.location.pathname;
+  const history = useNavigate();
+
   const [movies, setMovies] = useState([]);
   const [name, setName] = useState("");
   const [genre, setGenre] = useState("");
+  const [quality, setQuality] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const location = window.location.pathname;
-  const history = useNavigate();
+  const optionsData1 = [
+    {
+      value: "Action",
+      label: "Action",
+    },
+    {
+      value: "Comedy",
+      label: "Comedy",
+    },
+    {
+      value: "Drama",
+      label: "Drama",
+    },
+    {
+      value: "Horror",
+      label: "Horror",
+    },
+  ];
+  const optionsData2 = [
+    {
+      value: "1080,720,480",
+      label: "All",
+    },
+    {
+      value: "1080p",
+      label: "1080p",
+    },
+    {
+      value: "720p",
+      label: "720p",
+    },
+    {
+      value: "480p",
+      label: "480p",
+    },
+  ];
   const handleDelete = (id) => {
     axios
       .delete(`http://localhost:5000/movies/${id}`)
@@ -42,6 +80,7 @@ const Movie = () => {
       .post("http://localhost:5000/movies", {
         name,
         genre,
+        quality,
       })
       .then((response) => {
         console.log("posted", response.data);
@@ -50,6 +89,13 @@ const Movie = () => {
       .catch((err) => {
         console.log("error");
       });
+  };
+
+  const handleChangeGenre = (value) => {
+    setGenre(value);
+  };
+  const handleChangeQuality = (value) => {
+    setQuality(value);
   };
 
   const showModal = () => {
@@ -82,6 +128,11 @@ const Movie = () => {
       title: "Genre",
       dataIndex: "genre",
       key: "3",
+    },
+    {
+      title: "Quality",
+      dataIndex: "quality",
+      key: "5",
     },
     {
       title: "Actions",
@@ -154,13 +205,16 @@ const Movie = () => {
           onChange={(e) => setName(e.target.value)}
           style={{ marginBottom: "10px" }}
         />
-        <Input
-          prefix={<FileJpgOutlined />}
-          required
-          placeholder="Genre"
-          value={genre}
-          onChange={(e) => setGenre(e.target.value)}
-        />
+        <Select
+          defaultValue="Adventure"
+          onChange={handleChangeGenre}
+          options={optionsData1}
+        ></Select>
+        <Select
+          defaultValue="1080p"
+          onChange={handleChangeQuality}
+          options={optionsData2}
+        ></Select>
       </Modal>
       <Button onClick={showModal}>ADD MOVIE</Button>
     </div>
