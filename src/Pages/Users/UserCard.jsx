@@ -32,8 +32,16 @@ const Useredit = () => {
       })
       .catch((err) => {
         console.log("not updated", err);
-      })
-      .finally(() => {});
+      });
+  };
+
+  const handleChangeName = (e) => {
+    setName(e.target.value);
+    console.log("Name int", e.target.value);
+  };
+  const handleChangeNumber = (e) => {
+    setNumber(e.target.value);
+    console.log("number int", e.target.value);
   };
 
   useEffect(() => {
@@ -56,7 +64,7 @@ const Useredit = () => {
                     bordered={false}
                     style={{ marginBottom: "10px" }}
                     defaultValue={item.name}
-                    onChange={(e) => setName(e.target.value)}
+                    onChange={handleChangeName}
                     prefix={"Name :"}
                     required
                   />
@@ -64,7 +72,7 @@ const Useredit = () => {
                     bordered={false}
                     style={{ marginBottom: "10px" }}
                     defaultValue={item.number}
-                    onChange={(e) => setNumber(e.target.value)}
+                    onChange={handleChangeNumber}
                     prefix={`Number :`}
                     required
                   />
